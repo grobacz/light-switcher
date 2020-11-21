@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+    light-switch:
+        build: .
+        devices:
+            - "/dev/ttyACM0:/dev/ttyACM0"
+        restart_policy:
+            condition: on-failure
+            window: 10s
+#todo: connect to host network to detect local network devices (lightify gateway)
